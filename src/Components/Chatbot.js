@@ -9,12 +9,47 @@ import MessageSkeleton from "./MessageSkeleton";
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState("");
+  const [customInput, setCustomInput] = useState("");
   const messagesBoxRef = useRef(null);
   const [isLoading, setIsloading] = useState(false);
 
   const handleInputChange = (event) => {
     setInputText(event.target.value);
   };
+
+  useEffect(() => {
+    const customSendMessage = () => {
+      if (customInput.trim() !== "") {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: customInput, user: true },
+        ]);
+        setCustomInput("");
+
+        // Send user input to the backend
+        setIsloading(true);
+
+        setTimeout(() => {
+          axios
+            .post("https://university-bot-server-2.onrender.com", {
+              inputText: customInput,
+            })
+            .then((response) => {
+              console.log("Response from backend:", response.data);
+              const botResponse = {
+                text: response.data,
+                user: false,
+              };
+              setMessages((prevMessages) => [...prevMessages, botResponse]);
+            });
+          setTimeout(() => {
+            setIsloading(false);
+          }, 990);
+        }, 1000);
+      }
+    };
+    customSendMessage();
+  }, [customInput]);
 
   const handleSendMessage = (e) => {
     e.preventDefault();
@@ -104,7 +139,11 @@ const Chatbot = () => {
           },
         }}
       >
-        <Messages messages={messages} isLoading={isLoading} />
+        <Messages
+          messages={messages}
+          isLoading={isLoading}
+          setCustomInput={setCustomInput}
+        />
         {isLoading && <MessageSkeleton />} {/* Show skeleton if loading */}
       </Box>
 
