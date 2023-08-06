@@ -4,6 +4,7 @@ import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import axios from "axios";
 import Messages from "./Messages";
 import SendIcon from "@mui/icons-material/Send";
+import MessageSkeleton from "./MessageSkeleton";
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -16,8 +17,6 @@ const Chatbot = () => {
   };
 
   const handleSendMessage = (e) => {
-    setIsloading(true);
-
     e.preventDefault();
     if (inputText.trim() !== "") {
       setMessages((prevMessages) => [
@@ -27,19 +26,25 @@ const Chatbot = () => {
       setInputText("");
 
       // Send user input to the backend
+      setIsloading(true);
 
-      axios
-        .post("https://university-bot-server-2.onrender.com", {
-          inputText: inputText,
-        })
-        .then((response) => {
-          console.log("Response from backend:", response.data);
-          const botResponse = {
-            text: response.data,
-            user: false,
-          };
-          setMessages((prevMessages) => [...prevMessages, botResponse]);
-        });
+      setTimeout(() => {
+        axios
+          .post("https://university-bot-server-2.onrender.com", {
+            inputText: inputText,
+          })
+          .then((response) => {
+            console.log("Response from backend:", response.data);
+            const botResponse = {
+              text: response.data,
+              user: false,
+            };
+            setMessages((prevMessages) => [...prevMessages, botResponse]);
+          });
+        setTimeout(() => {
+          setIsloading(false);
+        }, 990);
+      }, 1000);
     }
   };
 
@@ -99,8 +104,10 @@ const Chatbot = () => {
           },
         }}
       >
-        <Messages messages={messages} />
+        <Messages messages={messages} isLoading={isLoading} />
+        {isLoading && <MessageSkeleton />} {/* Show skeleton if loading */}
       </Box>
+
       <form
         style={{ display: "flex", alignItems: "center" }}
         onSubmit={handleSendMessage}

@@ -17,6 +17,7 @@ function Messages({ messages }) {
           }}
         >
           {message.user ? null : <FaceIcon sx={{ color: "#694D76" }} />}
+
           <Typography
             sx={{
               fontSize: "14px",
