@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Paper, Button, Typography, Box, Input } from "@mui/material";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import axios from "axios";
 import Messages from "./Messages";
+import SendIcon from "@mui/icons-material/Send";
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState("");
+  const messagesBoxRef = useRef(null);
+  const [isLoading, setIsloading] = useState(false);
 
   const handleInputChange = (event) => {
     setInputText(event.target.value);
   };
 
   const handleSendMessage = (e) => {
+    setIsloading(true);
+
     e.preventDefault();
     if (inputText.trim() !== "") {
       setMessages((prevMessages) => [
@@ -38,20 +43,27 @@ const Chatbot = () => {
     }
   };
 
+  useEffect(() => {
+    if (messagesBoxRef.current) {
+      messagesBoxRef.current.scrollTop = messagesBoxRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
     <Paper
       sx={{
         width: "450px",
         minHeight: "500px",
         padding: 0,
-        border: "1px solid #ccc",
         borderRadius: "10px",
         background: "linear-gradient(to right, #694D76, #8C3F67)",
         position: "relative",
+        outline: "none",
+        border: "none",
       }}
     >
       <Typography
-        variant="h5"
+        variant="h6"
         sx={{
           padding: "10px",
           color: "white",
@@ -65,9 +77,10 @@ const Chatbot = () => {
         <SupportAgentIcon sx={{ fontSize: "30px" }} /> Kyro Chat Support
       </Typography>
       <Box
+        ref={messagesBoxRef}
         sx={{
-          minHeight: "340px",
-          maxHeight: "340px",
+          minHeight: "344px",
+          maxHeight: "344px",
           overflowY: "auto",
           backgroundColor: "white",
           padding: "16px",
@@ -82,19 +95,24 @@ const Chatbot = () => {
           },
           "&::-webkit-scrollbar-thumb": {
             backgroundColor: "#8C3F67",
-            borderRadius: 2,
+            borderRadius: 0,
           },
         }}
       >
         <Messages messages={messages} />
       </Box>
-      <form onSubmit={handleSendMessage}>
+      <form
+        style={{ display: "flex", alignItems: "center" }}
+        onSubmit={handleSendMessage}
+      >
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
             position: "absolute",
-            bottom: 10,
+            paddingBottom: "10px",
+            paddingTop: "10px",
+            bottom: 0,
             width: "100%",
             justifyContent: "space-around",
           }}
@@ -110,6 +128,8 @@ const Chatbot = () => {
               outline: "none",
               height: "50px",
               padding: "10px",
+              fontSize: "14px",
+              color: "black",
               "&:hover": {
                 borderBottom: "none",
               },
@@ -126,13 +146,16 @@ const Chatbot = () => {
           />
           <Button
             sx={{
-              backgroundColor: "#8C3F67",
+              // backgroundColor: "#8C3F67",
+              background: "transparent",
               color: "#fff",
               fontSize: "16px",
+              display: "flex",
+              gap: "10px",
             }}
             type="submit"
           >
-            Send
+            Send <SendIcon />
           </Button>
         </Box>
       </form>

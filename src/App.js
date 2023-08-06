@@ -12,7 +12,6 @@ function App() {
         height: "100vh",
         justifyContent: "center",
         alignItems: "center",
-
         backgroundColor: "#f0f0f0",
       }}
     >
