@@ -20,7 +20,7 @@ function Messages({ messages }) {
 
           <Typography
             sx={{
-              fontSize: "14px",
+              fontSize: "12px",
               width: "fit-content",
               maxWidth: "300px",
               padding: "10px",

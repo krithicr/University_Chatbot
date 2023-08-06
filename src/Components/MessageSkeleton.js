@@ -2,12 +2,12 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import FaceIcon from "@mui/icons-material/Face";
 
-const MessageSkeleton = ({ messagesBoxRef }) => {
+const MessageSkeleton = () => {
   return (
     <Box
       sx={{
         fontSize: "14px",
-        width: "100px",
+        width: "150px",
         // maxWidth: "300px",
         padding: "10px",
         marginBottom: "10px",
@@ -24,9 +24,9 @@ const MessageSkeleton = ({ messagesBoxRef }) => {
       <FaceIcon sx={{ color: "#694D76" }} />
       <Typography
         sx={{
-          fontSize: "14px",
-          width: "fit-content",
-          maxWidth: "300px",
+          fontSize: "12px",
+          width: "150px",
+          //   maxWidth: "300px",
           padding: "10px",
           borderRadius: "8px",
           backgroundColor: "#694D76",
