@@ -31,6 +31,7 @@ function Messages({ messages, setCustomInput }) {
             display: "flex",
             flexDirection: message.user ? "row-reverse" : "row",
             gap: "3px",
+            marginTop: "10px",
             marginBottom: "20px",
             position: "relative", // Add position relative to this container
           }}
@@ -53,7 +54,7 @@ function Messages({ messages, setCustomInput }) {
               whiteSpace: "pre-wrap",
               cursor: message.user ? "null" : "pointer",
               display: "flex",
-              alignItems: "center", // Center the text and the ResponseBox vertically
+              // alignItems: "center", // Center the text and the ResponseBox vertically
               position: "relative",
             }}
           >
@@ -61,11 +62,7 @@ function Messages({ messages, setCustomInput }) {
             {message.user
               ? null
               : hoveredMessageIndex === index && (
-                  <ResponseBox
-                    setCustomInput={setCustomInput}
-                    hoveredMessageIndex={hoveredMessageIndex}
-                    setHoveredMessageIndex={setHoveredMessageIndex}
-                  />
+                  <ResponseBox setCustomInput={setCustomInput} />
                 )}
           </Typography>
         </Box>

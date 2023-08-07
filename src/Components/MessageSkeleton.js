@@ -8,17 +8,16 @@ const MessageSkeleton = () => {
       sx={{
         fontSize: "14px",
         width: "150px",
-        // maxWidth: "300px",
-        padding: "10px",
+        // padding: "10px",
         marginBottom: "10px",
         borderRadius: "8px",
-        // backgroundColor: "#694D76",
         alignSelf: "flex-start",
         textAlign: "left",
         wordWrap: "break-word",
         whiteSpace: "pre-wrap",
         color: "white",
         display: "flex",
+        gap: "3px",
       }}
     >
       <FaceIcon sx={{ color: "#694D76" }} />
@@ -26,7 +25,6 @@ const MessageSkeleton = () => {
         sx={{
           fontSize: "12px",
           width: "150px",
-          //   maxWidth: "300px",
           padding: "10px",
           borderRadius: "8px",
           backgroundColor: "#694D76",

@@ -7,7 +7,12 @@ import SendIcon from "@mui/icons-material/Send";
 import MessageSkeleton from "./MessageSkeleton";
 
 const Chatbot = () => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    {
+      text: `Say "Hi"`,
+      user: false,
+    },
+  ]);
   const [inputText, setInputText] = useState("");
   const [customInput, setCustomInput] = useState("");
   const messagesBoxRef = useRef(null);
@@ -44,7 +49,7 @@ const Chatbot = () => {
             });
           setTimeout(() => {
             setIsloading(false);
-          }, 990);
+          }, 700);
         }, 1000);
       }
     };
@@ -78,7 +83,7 @@ const Chatbot = () => {
           });
         setTimeout(() => {
           setIsloading(false);
-        }, 990);
+        }, 700);
       }, 1000);
     }
   };
@@ -91,6 +96,7 @@ const Chatbot = () => {
 
   return (
     <Paper
+      elevation={12}
       sx={{
         width: "450px",
         minHeight: "500px",
@@ -139,11 +145,7 @@ const Chatbot = () => {
           },
         }}
       >
-        <Messages
-          messages={messages}
-          isLoading={isLoading}
-          setCustomInput={setCustomInput}
-        />
+        <Messages messages={messages} setCustomInput={setCustomInput} />
         {isLoading && <MessageSkeleton />} {/* Show skeleton if loading */}
       </Box>
 
@@ -192,7 +194,6 @@ const Chatbot = () => {
           />
           <Button
             sx={{
-              // backgroundColor: "#8C3F67",
               background: "transparent",
               color: "#fff",
               fontSize: "16px",
