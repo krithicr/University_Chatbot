@@ -150,13 +150,14 @@ app.listen(PORT, () => {
      * You can change the port by setting the PORT environment variable.
 
   3)Run the frontend app:
-        In Git-Bash:
+  
+ - In Git-Bash:
         
         ```
         $ cd ../Your respective Folder Name
         $ npm start
         ```
-      *The React app will run on port 3000 by default.
+      * The React app will run on port 3000 by default.
 
   4)Access the application:
       * Open your web browser 
