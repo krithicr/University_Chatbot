@@ -143,7 +143,7 @@ Before running the application, make sure you have the following installed on yo
 
     ```
         
-  - In Git-Bash:
+ - In Git-Bash:
     
     ```
      $ npm start
