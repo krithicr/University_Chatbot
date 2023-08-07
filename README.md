@@ -13,7 +13,7 @@ This project consists of a backend server built with Express.js and a frontend u
 - [Installation](#installation)
 - [Getting Started](#getting-started)
 - [API Endpoint](#api-endpoint)
-- [Contributing](#contributing)
+  
 
 
 ## Features
@@ -178,10 +178,4 @@ Before running the application, make sure you have the following installed on yo
 ```
   The server will process the user's query using Dialogflow and return the chatbot's response as JSON.
 
- ## Contributing
  
-  Contributions to the University Chatbot project are welcome! 
-  If you find any issues or want to suggest improvements, please feel free to open an issue or submit a pull request.
-
-Feel free to chat with the University Chatbot and have a great time exploring the application!
-For more information about the code, check the source files.
