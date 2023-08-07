@@ -152,11 +152,11 @@ app.listen(PORT, () => {
   3)Run the frontend app:
   
  - In Git-Bash:
-        
-        ```
+   
+     ```
         $ cd ../Your respective Folder Name
         $ npm start
-        ```
+     ```
       * The React app will run on port 3000 by default.
 
   4)Access the application:
