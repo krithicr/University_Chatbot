@@ -98,7 +98,7 @@ const Chatbot = () => {
     <Paper
       elevation={12}
       sx={{
-        width: "450px",
+        width: { xs: "87vw", lg: "450px" },
         minHeight: "500px",
         padding: 0,
         borderRadius: "10px",

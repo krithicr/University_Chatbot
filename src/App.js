@@ -23,14 +23,26 @@ function App() {
       }}
     >
       <Typography
-        variant="h3"
-        sx={{ textAlign: "center", marginBottom: "20px", color: "#8C3F67" }}
+        variant="h2"
+        sx={{
+          textAlign: "center",
+          marginBottom: "20px",
+          color: "#8C3F67",
+          fontWeight: "600",
+          fontSize: { xs: "28px", sm: "32px", lg: "46px" },
+        }}
       >
         Welcome to the Chatbot App!
       </Typography>
       <Typography
         variant="h6"
-        sx={{ textAlign: "center", marginBottom: "20px", width: "50%" }}
+        sx={{
+          textAlign: "center",
+          marginBottom: "20px",
+          width: { sm: "80%", lg: "50%" },
+          fontWeight: "normal",
+          fontSize: { xs: "16px", sm: "20px", lg: "20px" },
+        }}
       >
         The chatbot leverages Google's Dialogflow API for natural language
         processing to handle user queries and generate responses.
@@ -46,7 +58,7 @@ function App() {
           sx={{
             position: "absolute",
             right: "25px",
-            bottom: "85px",
+            bottom: { lg: "85px" },
           }}
         >
           {isBotActivated && <Chatbot />}
@@ -61,7 +73,7 @@ function App() {
           width: "30px",
           borderRadius: "30px",
           position: "fixed",
-          bottom: "16px",
+          bottom: { xs: "10px", lg: "16px" },
           right: "16px",
           backgroundColor: "#694D76",
           ":hover": {
