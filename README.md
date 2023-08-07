@@ -160,8 +160,9 @@ app.listen(PORT, () => {
       * The React app will run on port 3000 by default.
 
   4)Access the application:
-      * Open your web browser 
-      * And navigate to http://localhost:3000 to access the University Chatbot application.
+  
+* Open your web browser
+* And navigate to http://localhost:3000 to access the University Chatbot application.
 
  ## API Endpoint
  
