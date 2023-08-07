@@ -50,7 +50,7 @@ Before running the application, make sure you have the following installed on yo
    ```
     $ cd ../Your respective Folder Name
     $ npm init
-    
+    ```
    
 ## Getting Started
    
