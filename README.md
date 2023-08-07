@@ -56,19 +56,19 @@ Before running the application, make sure you have the following installed on yo
    
   1)Set up Dialogflow:
   
-      * Create a Dialogflow agent in your Google Cloud account.
-      * Select or create a Cloud Platform project.
-      * Enable the Dialogflow API API.
-      * Set up authentication with a service account so you can access the API from your local workstation.
-      * Download the service account key JSON file and save it as key.json in the backend folder.
+ * Create a Dialogflow agent in your Google Cloud account.
+ * Select or create a Cloud Platform project.
+ * Enable the Dialogflow API API.
+ * Set up authentication with a service account so you can access the API from your local workstation.
+ * Download the service account key JSON file and save it as key.json in the backend folder.
       
   2)Create the backend server:
   
-    - Installing the client library:
+ - Installing the client library:
         ```
         npm install @google-cloud/dialogflow
         ```
-    - Using the client library:
+- Using the client library:
     
  ```
 const express = require("express");
@@ -143,6 +143,7 @@ app.listen(PORT, () => {
  ```
         
   - In Git-Bash:
+    
     ```
      $ npm start
     ```
@@ -150,6 +151,7 @@ app.listen(PORT, () => {
 
   3)Run the frontend app:
         In Git-Bash:
+        
         ```
         $ cd ../Your respective Folder Name
         $ npm start
@@ -174,8 +176,8 @@ app.listen(PORT, () => {
 
  ## Contributing
  
-  *Contributions to the University Chatbot project are welcome! 
-  *If you find any issues or want to suggest improvements, please feel free to open an issue or submit a pull request.
+  Contributions to the University Chatbot project are welcome! 
+  If you find any issues or want to suggest improvements, please feel free to open an issue or submit a pull request.
 
 Feel free to chat with the University Chatbot and have a great time exploring the application!
 For more information about the code, check the source files in the backend and frontend folders.
