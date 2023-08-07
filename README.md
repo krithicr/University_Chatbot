@@ -184,4 +184,4 @@ Before running the application, make sure you have the following installed on yo
   If you find any issues or want to suggest improvements, please feel free to open an issue or submit a pull request.
 
 Feel free to chat with the University Chatbot and have a great time exploring the application!
-For more information about the code, check the source files in the backend and frontend folders.
+For more information about the code, check the source files.
