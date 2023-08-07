@@ -55,12 +55,15 @@ Before running the application, make sure you have the following installed on yo
 ## Getting Started
    
   1)Set up Dialogflow:
+  
       * Create a Dialogflow agent in your Google Cloud account.
       * Select or create a Cloud Platform project.
       * Enable the Dialogflow API API.
       * Set up authentication with a service account so you can access the API from your local workstation.
       * Download the service account key JSON file and save it as key.json in the backend folder.
+      
   2)Create the backend server:
+  
     - Installing the client library:
         ```
         npm install @google-cloud/dialogflow
