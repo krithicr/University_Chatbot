@@ -155,8 +155,8 @@ Before running the application, make sure you have the following installed on yo
  - In Git-Bash:
    
      ```
-        $ cd ../Your respective Folder Name
-        $ npm start
+     $ cd ../Your respective Folder Name
+     $ npm start
      ```
       * The React app will run on port 3000 by default.
 
