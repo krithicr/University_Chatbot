@@ -66,8 +66,8 @@ Before running the application, make sure you have the following installed on yo
   
  - Installing the client library:
     ```
-      npm install @google-cloud/dialogflow
-   ```
+    $ npm install @google-cloud/dialogflow
+    ```
 - Using the client library:
     
  ```
