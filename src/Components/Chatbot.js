@@ -49,7 +49,7 @@ const Chatbot = () => {
             });
           setTimeout(() => {
             setIsloading(false);
-          }, 700);
+          }, 900);
         }, 1000);
       }
     };
@@ -83,7 +83,7 @@ const Chatbot = () => {
           });
         setTimeout(() => {
           setIsloading(false);
-        }, 700);
+        }, 900);
       }, 1000);
     }
   };
